@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EventEaseManagement"
+    "\\EventEaseManagement",
+    "\\EventEaseManagement\\Properties",
+    "\\EventEaseManagement\\Views\\Bookings"
   ],
-  "SelectedNode": "\\EventEaseManagement",
   "PreviewInSolutionExplorer": false
 }

@@ -1,47 +1,261 @@
 @model IEnumerable<EventEaseManagement.Models.Booking>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bookings";
 }
 
-<h1>Index</h1>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1><i class="fas fa-ticket-alt text-primary"></i> Bookings</h1>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Create Booking
+    </a>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BookingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Venue)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Venue.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BookingId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BookingId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BookingId">Delete</a>
-            </td>
-        </tr>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fas fa-check-circle"></i> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
 }
-    </tbody>
-</table>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fas fa-exclamation-triangle"></i> @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<!-- FILTER SECTION - Part 3 -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h6 class="mb-0"><i class="fas fa-filter"></i> Filter Bookings</h6>
+    </div>
+    <div class="card-body">
+        <form method="get" asp-action="Index">
+            <div class="row g-3">
+                <!-- Search Box -->
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Search</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" name="searchTerm" class="form-control" placeholder="Booking ID or Event Name..." value="@ViewBag.CurrentSearchTerm">
+                    </div>
+                </div>
+
+                <!-- Event Type Filter (Part 3) -->
+                <div class="col-md-2">
+                    <label class="form-label fw-bold">Event Type</label>
+                    <select name="eventTypeId" class="form-select">
+                        <option value="">-- All Types --</option>
+                        @foreach (var eventType in ViewBag.EventTypes)
+                        {
+                            if (ViewBag.CurrentEventTypeId != null && eventType.EventTypeId == ViewBag.CurrentEventTypeId)
+                            {
+                                <option value="@eventType.EventTypeId" selected>@eventType.EventTypeName</option>
+                            }
+                            else
+                            {
+                                <option value="@eventType.EventTypeId">@eventType.EventTypeName</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <!-- Venue Filter (Part 3) -->
+                <div class="col-md-2">
+                    <label class="form-label fw-bold">Venue</label>
+                    <select name="venueId" class="form-select">
+                        <option value="">-- All Venues --</option>
+                        @foreach (var venue in ViewBag.Venues)
+                        {
+                            if (ViewBag.CurrentVenueId != null && venue.VenueId == ViewBag.CurrentVenueId)
+                            {
+                                <option value="@venue.VenueId" selected>@venue.VenueName</option>
+                            }
+                            else
+                            {
+                                <option value="@venue.VenueId">@venue.VenueName</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <!-- Date Range Filter (Part 3) -->
+                <div class="col-md-2">
+                    <label class="form-label fw-bold">From Date</label>
+                    <input type="date" name="startDate" class="form-control" value="@ViewBag.CurrentStartDate">
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label fw-bold">To Date</label>
+                    <input type="date" name="endDate" class="form-control" value="@ViewBag.CurrentEndDate">
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Apply Filters
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-undo"></i> Clear Filters
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info text-center">
+        <i class="fas fa-info-circle"></i> No bookings found matching your criteria.
+    </div>
+}
+else
+{
+    <div class="row g-4" id="bookingsContainer">
+        @foreach (var booking in Model)
+        {
+            <div class="col-md-6 col-lg-4 booking-card" data-booking-id="@booking.BookingId" data-event-name="@booking.Event?.EventName">
+                <div class="card h-100 shadow-sm border-0 rounded-3">
+                    <!-- Card Header with Gradient -->
+                    <div class="card-header bg-gradient text-white rounded-top-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-calendar-alt me-2"></i> @booking.Event?.EventName
+                            </h5>
+                            <span class="badge bg-light text-dark rounded-pill">
+                                <i class="fas fa-hashtag"></i> @booking.BookingId
+                            </span>
+                        </div>
+                        <!-- NEW: Show Event Type badge (Part 3) -->
+                        @if (booking.Event?.EventType != null)
+                        {
+                            <span class="badge bg-info mt-2">
+                                <i class="fas fa-tag"></i> @booking.Event.EventType.EventTypeName
+                            </span>
+                        }
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Venue Section -->
+                        <div class="mb-3 pb-2 border-bottom">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-primary bg-opacity-10 p-2 me-2">
+                                    <i class="fas fa-building text-primary"></i>
+                                </div>
+                                <h6 class="mb-0 fw-bold">Venue Details</h6>
+                            </div>
+                            <p class="mb-0 ms-4">@booking.Venue?.VenueName</p>
+                        </div>
+
+                        <!-- Event Details Section -->
+                        <div class="mb-3 pb-2 border-bottom">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-success bg-opacity-10 p-2 me-2">
+                                    <i class="fas fa-clock text-success"></i>
+                                </div>
+                                <h6 class="mb-0 fw-bold">Event Schedule</h6>
+                            </div>
+                            <div class="ms-4">
+                                <p class="mb-1">
+                                    <i class="fas fa-calendar-day text-muted me-2"></i>
+                                    <strong>Date:</strong> @(booking.Event?.StartDate.ToString("dddd, dd MMM yyyy"))
+                                </p>
+                                <p class="mb-0">
+                                    <i class="fas fa-hourglass-half text-muted me-2"></i>
+                                    <strong>Time:</strong> @(booking.Event?.StartDate.ToString("hh:mm tt")) - @(booking.Event?.EndDate.ToString("hh:mm tt"))
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Booking Info Section -->
+                        <div class="mb-2">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-info bg-opacity-10 p-2 me-2">
+                                    <i class="fas fa-receipt text-info"></i>
+                                </div>
+                                <h6 class="mb-0 fw-bold">Booking Information</h6>
+                            </div>
+                            <div class="ms-4">
+                                <p class="mb-0">
+                                    <i class="fas fa-calendar-check text-muted me-2"></i>
+                                    <strong>Booked on:</strong> @booking.BookingDate.ToString("dd MMM yyyy HH:mm")
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer bg-transparent border-top-0 pb-3">
+                        <button onclick="cancelBooking(@booking.BookingId, '@booking.Event?.EventName')" class="btn btn-danger btn-sm w-100 rounded-pill">
+                            <i class="fas fa-times me-2"></i> Cancel Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section Scripts {
+    <script>
+        // Search functionality (case-insensitive with null safety)
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let searchValue = this.value.toLowerCase().trim();
+            let cards = document.querySelectorAll('.booking-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let bookingId = card.getAttribute('data-booking-id');
+                let eventName = card.getAttribute('data-event-name')?.toLowerCase() || '';
+
+                if (bookingId.toString().includes(searchValue) || eventName.includes(searchValue)) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            let noResultsMsg = document.getElementById('noResultsMessage');
+            if (visibleCount === 0 && cards.length > 0) {
+                if (!noResultsMsg) {
+                    let msg = document.createElement('div');
+                    msg.id = 'noResultsMessage';
+                    msg.className = 'alert alert-warning text-center';
+                    msg.innerHTML = '<i class="fas fa-search"></i> No bookings match your search. Try different keywords.';
+                    document.getElementById('bookingsContainer').parentNode.appendChild(msg);
+                }
+            } else if (noResultsMsg) {
+                noResultsMsg.remove();
+            }
+        });
+
+        function cancelBooking(id, eventName) {
+            Swal.fire({
+                title: 'Cancel Booking?',
+                text: `Are you sure you want to cancel the booking for "${eventName || 'this event'}"? This action cannot be undone.`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, cancel it!',
+                cancelButtonText: 'No, keep it'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Cancelling...',
+                        text: 'Please wait',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+                    window.location.href = `/Bookings/Delete/${id}`;
+                }
+            });
+        }
+    </script>
+}

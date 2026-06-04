@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace EventEaseManagement.Models
 {
@@ -20,6 +21,10 @@ namespace EventEaseManagement.Models
 
         [StringLength(500)]
         public string? ImageUrl { get; set; }
+
+        // For file upload - not stored in database
+        [NotMapped]
+        public IFormFile? ImageFile { get; set; }
 
         public ICollection<Booking>? Bookings { get; set; }
     }

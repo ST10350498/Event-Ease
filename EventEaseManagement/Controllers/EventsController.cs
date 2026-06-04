@@ -50,8 +50,6 @@ namespace EventEaseManagement.Controllers
         }
 
         // POST: Events/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EventId,EventName,Description,StartDate,EndDate,ImageUrl")] Event @event)
@@ -60,6 +58,7 @@ namespace EventEaseManagement.Controllers
             {
                 _context.Add(@event);
                 await _context.SaveChangesAsync();
+                TempData["Success"] = $"✅ Event '{@event.EventName}' created successfully!";
                 return RedirectToAction(nameof(Index));
             }
             return View(@event);
@@ -82,8 +81,6 @@ namespace EventEaseManagement.Controllers
         }
 
         // POST: Events/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("EventId,EventName,Description,StartDate,EndDate,ImageUrl")] Event @event)
@@ -99,6 +96,7 @@ namespace EventEaseManagement.Controllers
                 {
                     _context.Update(@event);
                     await _context.SaveChangesAsync();
+                    TempData["Success"] = $"✅ Event '{@event.EventName}' updated successfully!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -134,18 +132,29 @@ namespace EventEaseManagement.Controllers
             return View(@event);
         }
 
-        // POST: Events/Delete/5
+        // POST: Events/Delete/5 (UPDATED with booking count)
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var @event = await _context.Events.FindAsync(id);
-            if (@event != null)
+            var eventItem = await _context.Events
+                .Include(e => e.Bookings)
+                .FirstOrDefaultAsync(e => e.EventId == id);
+
+            if (eventItem != null && eventItem.Bookings != null && eventItem.Bookings.Any())
             {
-                _context.Events.Remove(@event);
+                int bookingCount = eventItem.Bookings.Count;
+                TempData["Error"] = $"❌ Cannot delete event '{eventItem.EventName}'. It has {bookingCount} active booking(s). Please cancel the booking(s) first before deleting this event.";
+                return RedirectToAction(nameof(Index));
             }
 
-            await _context.SaveChangesAsync();
+            if (eventItem != null)
+            {
+                _context.Events.Remove(eventItem);
+                await _context.SaveChangesAsync();
+                TempData["Success"] = $"✅ Event '{eventItem.EventName}' deleted successfully!";
+            }
+
             return RedirectToAction(nameof(Index));
         }
 

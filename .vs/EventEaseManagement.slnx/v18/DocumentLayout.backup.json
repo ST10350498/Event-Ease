@@ -1,113 +1,139 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\",
+  "WorkspaceRootPath": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\lab_services_student\\source\\repos\\eventeasemanagement\\eventeasemanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\views\\bookings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\views\\bookings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\lab_services_student\\source\\repos\\eventeasemanagement\\eventeasemanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\lab_services_student\\source\\repos\\eventeasemanagement\\eventeasemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\models\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\models\\eventtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\lab_services_student\\source\\repos\\eventeasemanagement\\eventeasemanagement\\data\\applicationdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\data\\applicationdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\lab_services_student\\source\\repos\\eventeasemanagement\\eventeasemanagement\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\lab_services_student\\source\\repos\\eventeasemanagement\\eventeasemanagement\\migrations\\20260414022505_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\migrations\\20260414022505_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|c:\\users\\emeris\\downloads\\eventeasemanagement-20260604t134831z-3-001\\eventeasemanagement\\eventeasemanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0834738F-D67C-E441-3674-1143E2BAC64B}|EventEaseManagement\\EventEaseManagement.csproj|solutionrelative:eventeasemanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 29,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "EventEaseManagement\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\appsettings.Development.json",
-              "RelativeToolTip": "EventEaseManagement\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-15T12:37:32.568Z"
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\appsettings.json",
-              "RelativeDocumentMoniker": "EventEaseManagement\\appsettings.json",
-              "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\appsettings.json",
-              "RelativeToolTip": "EventEaseManagement\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-15T12:37:10.989Z",
+              "DocumentIndex": 1,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "EventEaseManagement\\Controllers\\BookingsController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "EventEaseManagement\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAQwPEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T19:10:16.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "EventEaseManagement\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Models\\Event.cs",
+              "RelativeToolTip": "EventEaseManagement\\Models\\Event.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T02:27:57.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Program.cs",
-              "RelativeDocumentMoniker": "EventEaseManagement\\Program.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Program.cs",
-              "RelativeToolTip": "EventEaseManagement\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAKAAAAAAAAAA==",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EventEaseManagement\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EventEaseManagement\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T12:34:27.415Z"
+              "WhenOpened": "2026-06-04T02:36:21.419Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDb.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Data\\ApplicationDb.cs",
-              "RelativeDocumentMoniker": "EventEaseManagement\\Data\\ApplicationDb.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Data\\ApplicationDb.cs",
-              "RelativeToolTip": "EventEaseManagement\\Data\\ApplicationDb.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA2wCkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T03:47:59.493Z"
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Views\\Bookings\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventEaseManagement\\Views\\Bookings\\Index.cshtml",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Views\\Bookings\\Index.cshtml",
+              "RelativeToolTip": "EventEaseManagement\\Views\\Bookings\\Index.cshtml",
+              "ViewState": "AgIAANoAAAAAAAAAAAAuwPEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-07T20:10:44.276Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Venue.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Models\\Venue.cs",
-              "RelativeDocumentMoniker": "EventEaseManagement\\Models\\Venue.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Models\\Venue.cs",
-              "RelativeToolTip": "EventEaseManagement\\Models\\Venue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "EventType.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Models\\EventType.cs",
+              "RelativeDocumentMoniker": "EventEaseManagement\\Models\\EventType.cs",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Models\\EventType.cs",
+              "RelativeToolTip": "EventEaseManagement\\Models\\EventType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T03:46:32.446Z"
+              "WhenOpened": "2026-06-04T02:31:17.231Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "20260414022505_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Migrations\\20260414022505_InitialCreate.cs",
-              "RelativeDocumentMoniker": "EventEaseManagement\\Migrations\\20260414022505_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\EventEaseManagement\\EventEaseManagement\\Migrations\\20260414022505_InitialCreate.cs",
-              "RelativeToolTip": "EventEaseManagement\\Migrations\\20260414022505_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Program.cs",
+              "RelativeDocumentMoniker": "EventEaseManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\Program.cs",
+              "RelativeToolTip": "EventEaseManagement\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T03:00:42.881Z"
+              "WhenOpened": "2026-06-04T02:25:42.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "EventEaseManagement\\appsettings.json",
+              "ToolTip": "C:\\Users\\emeris\\Downloads\\EventEaseManagement-20260604T134831Z-3-001\\EventEaseManagement\\EventEaseManagement\\appsettings.json",
+              "RelativeToolTip": "EventEaseManagement\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-01T23:23:31.778Z",
+              "EditorCaption": ""
             }
           ]
         }
