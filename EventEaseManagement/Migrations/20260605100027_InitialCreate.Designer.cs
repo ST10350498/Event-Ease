@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventEaseManagement.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260414022505_InitialCreate")]
+    [Migration("20260605100027_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -73,6 +73,9 @@ namespace EventEaseManagement.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int?>("EventTypeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ImageUrl")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -82,7 +85,69 @@ namespace EventEaseManagement.Migrations
 
                     b.HasKey("EventId");
 
+                    b.HasIndex("EventTypeId");
+
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("EventEaseManagement.Models.EventType", b =>
+                {
+                    b.Property<int>("EventTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventTypeId"));
+
+                    b.Property<string>("EventTypeName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("EventTypeId");
+
+                    b.ToTable("EventTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            EventTypeId = 1,
+                            EventTypeName = "Conference"
+                        },
+                        new
+                        {
+                            EventTypeId = 2,
+                            EventTypeName = "Wedding"
+                        },
+                        new
+                        {
+                            EventTypeId = 3,
+                            EventTypeName = "Concert"
+                        },
+                        new
+                        {
+                            EventTypeId = 4,
+                            EventTypeName = "Corporate Event"
+                        },
+                        new
+                        {
+                            EventTypeId = 5,
+                            EventTypeName = "Private Party"
+                        },
+                        new
+                        {
+                            EventTypeId = 6,
+                            EventTypeName = "Exhibition"
+                        },
+                        new
+                        {
+                            EventTypeId = 7,
+                            EventTypeName = "Workshop"
+                        },
+                        new
+                        {
+                            EventTypeId = 8,
+                            EventTypeName = "Networking"
+                        });
                 });
 
             modelBuilder.Entity("EventEaseManagement.Models.Venue", b =>
@@ -120,13 +185,13 @@ namespace EventEaseManagement.Migrations
                     b.HasOne("EventEaseManagement.Models.Event", "Event")
                         .WithMany("Bookings")
                         .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EventEaseManagement.Models.Venue", "Venue")
                         .WithMany("Bookings")
                         .HasForeignKey("VenueId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Event");
@@ -136,7 +201,21 @@ namespace EventEaseManagement.Migrations
 
             modelBuilder.Entity("EventEaseManagement.Models.Event", b =>
                 {
+                    b.HasOne("EventEaseManagement.Models.EventType", "EventType")
+                        .WithMany("Events")
+                        .HasForeignKey("EventTypeId");
+
+                    b.Navigation("EventType");
+                });
+
+            modelBuilder.Entity("EventEaseManagement.Models.Event", b =>
+                {
                     b.Navigation("Bookings");
+                });
+
+            modelBuilder.Entity("EventEaseManagement.Models.EventType", b =>
+                {
+                    b.Navigation("Events");
                 });
 
             modelBuilder.Entity("EventEaseManagement.Models.Venue", b =>
