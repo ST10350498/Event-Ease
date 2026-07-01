@@ -44,39 +44,45 @@
                     </div>
                 </div>
 
-                <!-- Event Type Filter (Part 3) -->
+                <!-- Event Type Filter (Part 3) - FIXED -->
                 <div class="col-md-2">
                     <label class="form-label fw-bold">Event Type</label>
                     <select name="eventTypeId" class="form-select">
                         <option value="">-- All Types --</option>
-                        @foreach (var eventType in ViewBag.EventTypes)
+                        @if (ViewBag.EventTypes != null)
                         {
-                            if (ViewBag.CurrentEventTypeId != null && eventType.EventTypeId == ViewBag.CurrentEventTypeId)
+                            foreach (var eventType in ViewBag.EventTypes)
+                        {
+                                if (ViewBag.CurrentEventTypeId != null && eventType.Value == ViewBag.CurrentEventTypeId.ToString())
                             {
-                                <option value="@eventType.EventTypeId" selected>@eventType.EventTypeName</option>
+                                    <option value="@eventType.Value" selected>@eventType.Text</option>
                             }
                             else
                             {
-                                <option value="@eventType.EventTypeId">@eventType.EventTypeName</option>
+                                    <option value="@eventType.Value">@eventType.Text</option>
+                                }
                             }
                         }
                     </select>
                 </div>
 
-                <!-- Venue Filter (Part 3) -->
+                <!-- Venue Filter (Part 3) - FIXED -->
                 <div class="col-md-2">
                     <label class="form-label fw-bold">Venue</label>
                     <select name="venueId" class="form-select">
                         <option value="">-- All Venues --</option>
-                        @foreach (var venue in ViewBag.Venues)
+                        @if (ViewBag.Venues != null)
                         {
-                            if (ViewBag.CurrentVenueId != null && venue.VenueId == ViewBag.CurrentVenueId)
+                            foreach (var venue in ViewBag.Venues)
+                        {
+                                if (ViewBag.CurrentVenueId != null && venue.Value == ViewBag.CurrentVenueId.ToString())
                             {
-                                <option value="@venue.VenueId" selected>@venue.VenueName</option>
+                                    <option value="@venue.Value" selected>@venue.Text</option>
                             }
                             else
                             {
-                                <option value="@venue.VenueId">@venue.VenueName</option>
+                                    <option value="@venue.Value">@venue.Text</option>
+                                }
                             }
                         }
                     </select>
@@ -130,7 +136,6 @@ else
                                 <i class="fas fa-hashtag"></i> @booking.BookingId
                             </span>
                         </div>
-                        <!-- NEW: Show Event Type badge (Part 3) -->
                         @if (booking.Event?.EventType != null)
                         {
                             <span class="badge bg-info mt-2">
