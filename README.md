@@ -15,14 +15,10 @@ Note: Code will continue to be pushed after submission. This link was submitted 
 
 YouTube Video Link
 
-URL: [LINK TO BE ADDED]
-
-Video will be recorded and link added. Submission timestamp proves on-time submission.
 
 
 Live Web App URL (Part 3)
 
-URL: [LINK TO BE ADDED]
 
 Deployment in progress. Screenshots attached below show current state.
 
@@ -48,7 +44,6 @@ Filters Implemented
 - Filter by Venue
 
 Evidence
-[Screenshots to be inserted showing filter UI]
 
 
 Part 3B – Migration to Cloud
