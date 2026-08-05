@@ -18,9 +18,14 @@ YouTube Video Link
 
 Live Web App URL (Part 3)
 
-<img width="656" height="711" alt="Screenshot 2026-08-05 110649" src="https://github.com/user-attachments/assets/f06a759d-66ce-4e8b-8118-170008beefa4" />
+<img width="45%" alt="Screenshot 2026-08-05 110649" src="https://github.com/user-attachments/assets/f06a759d-66ce-4e8b-8118-170008beefa4" />
+
 Deployment in progress. Screenshots attached below show current state.
 
+<img width="50%" alt="Screenshot 2026-08-05 115927" src="https://github.com/user-attachments/assets/d168f82c-760e-41f5-9084-dc8f1564610e" />
+<img width="45%" alt="Screenshot 2026-08-05 115517" src="https://github.com/user-attachments/assets/fbf4b75e-4f42-4ea3-b3e5-0d2aa3ec1d48" />
+<img width="45%" alt="Screenshot 2026-08-05 115512" src="https://github.com/user-attachments/assets/5bad598f-c2ac-4f97-b8ed-81b28752be5e" />
+<img width="45%" alt="Screenshot 2026-08-05 115508" src="https://github.com/user-attachments/assets/5df1d509-5bf1-4f6b-b87b-d615791fe5cb" />
 
 Part 3A – Advanced Filtering
 
