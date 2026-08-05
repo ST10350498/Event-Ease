@@ -17,8 +17,8 @@ YouTube Video Link
 
 
 Live Web App URL (Part 3)
-<img width="656" height="711" alt="Screenshot 2026-08-05 110649" src="https://github.com/user-attachments/assets/f06a759d-66ce-4e8b-8118-170008beefa4" />
 
+<img width="656" height="711" alt="Screenshot 2026-08-05 110649" src="https://github.com/user-attachments/assets/f06a759d-66ce-4e8b-8118-170008beefa4" />
 Deployment in progress. Screenshots attached below show current state.
 
 
